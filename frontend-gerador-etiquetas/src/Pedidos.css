@@ -1,0 +1,60 @@
+.pedidos-container {
+  display: flex;
+  justify-content: center;
+  padding: 90px;
+  font-family: Arial, sans-serif;
+}
+
+.pedidos-tabela {
+  border-collapse: collapse;
+}
+
+.pedidos-tabela th,
+.pedidos-tabela td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #dcdada; /* Linha horizontal entre pedidos */
+  text-align: left;
+}
+
+.pedidos-tabela th {
+  font-size:11px;
+  font-weight: 1;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.pedidos-tabela td{
+  font-size: 15px;
+  font-weight: 300;
+
+}
+
+.acoes {
+  display: flex;
+  gap: 8px; /* Espaçamento entre botões */
+}
+
+.btn {
+  padding: 8px 14px;
+  border: 1px solid black; /* Borda preta */
+  border-radius: 20px;
+  background-color: transparent; /* Sem cor de fundo */
+  color: black; /* Texto preto */
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Leve destaque no hover */
+}
+
+.btn-combo {
+  background-color: #FFD700; /* Amarelo dourado */
+  border: 1px solid #FFD700;
+  color: black;
+}
+
+.btn-combo:hover {
+  background-color: #FFC300; /* Tom mais escuro no hover */
+}
