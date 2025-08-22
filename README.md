@@ -2,7 +2,7 @@
 **Gerador de Etiquetas** é uma aplicação web em produção que **automatiza o cadastro e emissão de etiquetas e declarações de conteúdo** para envios via Correios.  
 Foi criada para reduzir drasticamente o tempo e o esforço na geração manual de pedidos, eliminando etapas repetitivas e erros comuns.
 
-💡 **Impacto real:** este sistema já está em uso no ambiente de produção, otimizando o fluxo de expedição e aumentando a produtividade.
+💡 **Impacto real:** em uso em produção, este sistema reduziu o tempo da equipe de expedição em pelo menos 83% ao automatizar a geração de etiquetas, declarações e pré-postagens.
 
 ## Funcionalidades
 - Geração automática da **Pré-Postagem** do Correios.
