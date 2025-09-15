@@ -1,6 +1,7 @@
-package com.rastreio.geradoretiquetas.dto;
+package com.rastreio.geradoretiquetas.pedido.dto;
 
 import java.util.List;
+import com.rastreio.geradoretiquetas.cliente.dto.ClienteDTO;
 
 public class PedidoDTO {
     private int numero;

@@ -1,4 +1,4 @@
-package com.rastreio.geradoretiquetas.dto;
+package com.rastreio.geradoretiquetas.cliente.dto;
 
 public class EnderecoDTO {
     private String logradouro;

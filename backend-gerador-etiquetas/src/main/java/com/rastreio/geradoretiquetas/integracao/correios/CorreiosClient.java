@@ -1,13 +1,13 @@
-package com.rastreio.geradoretiquetas.client;
+package com.rastreio.geradoretiquetas.integracao.correios;
 
 import lombok.extern.slf4j.Slf4j;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.openhtmltopdf.pdfboxout.PdfRendererBuilder;
-import com.rastreio.geradoretiquetas.dto.EnderecoDTO;
-import com.rastreio.geradoretiquetas.dto.PedidoDTO;
-import com.rastreio.geradoretiquetas.store.PrePostagemStore;
+import com.rastreio.geradoretiquetas.cliente.dto.EnderecoDTO;
+import com.rastreio.geradoretiquetas.pedido.dto.PedidoDTO;
+import com.rastreio.geradoretiquetas.integracao.PrePostagemStore;
 import org.apache.tomcat.util.http.fileupload.ByteArrayOutputStream;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;

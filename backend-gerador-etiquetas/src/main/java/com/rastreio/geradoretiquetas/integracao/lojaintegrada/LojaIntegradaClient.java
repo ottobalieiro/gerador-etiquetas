@@ -1,4 +1,4 @@
-package com.rastreio.geradoretiquetas.client;
+package com.rastreio.geradoretiquetas.integracao.lojaintegrada;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;

@@ -1,4 +1,4 @@
-package com.rastreio.geradoretiquetas.dto;
+package com.rastreio.geradoretiquetas.pedido.dto;
 
 public class ItemPedidoDTO {
     private String nomeProduto;

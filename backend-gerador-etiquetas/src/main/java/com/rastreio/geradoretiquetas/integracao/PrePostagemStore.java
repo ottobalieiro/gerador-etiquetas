@@ -1,4 +1,4 @@
-package com.rastreio.geradoretiquetas.store;
+package com.rastreio.geradoretiquetas.integracao;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

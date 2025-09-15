@@ -1,12 +1,17 @@
-package com.rastreio.geradoretiquetas.controller;
+package com.rastreio.geradoretiquetas.pedido;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.rastreio.geradoretiquetas.client.CorreiosClient;
-import com.rastreio.geradoretiquetas.client.LojaIntegradaClient;
-import com.rastreio.geradoretiquetas.dto.PedidoDTO;
-import com.rastreio.geradoretiquetas.service.PedidoService;
-import org.springframework.http.*;
-import org.springframework.web.bind.annotation.*;
+import com.rastreio.geradoretiquetas.integracao.correios.CorreiosClient;
+import com.rastreio.geradoretiquetas.integracao.lojaintegrada.LojaIntegradaClient;
+import com.rastreio.geradoretiquetas.pedido.dto.PedidoDTO;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
@@ -92,23 +97,23 @@ public class PedidoController {
                 String base64Declaracao = Base64.getEncoder().encodeToString(htmlDeclaracao.getBytes(StandardCharsets.UTF_8));
 
                 String html = """
-            <html>
-            <head>
-                <script>
-                    var pdfEtiqueta = 'data:application/pdf;base64,%s';
-                    var w1 = window.open();
-                    w1.document.write('<iframe src="' + pdfEtiqueta + '" style="width:100%%;height:100%%;"></iframe>');
+                        <html>
+                        <head>
+                            <script>
+                                var pdfEtiqueta = 'data:application/pdf;base64,%s';
+                                var w1 = window.open();
+                                w1.document.write('<iframe src="' + pdfEtiqueta + '" style="width:100%%;height:100%%;"></iframe>');
 
-                    var htmlDeclaracao = decodeURIComponent(escape(window.atob('%s')));
-                    var w2 = window.open();
-                    w2.document.write(htmlDeclaracao);
+                                var htmlDeclaracao = decodeURIComponent(escape(window.atob('%s')));
+                                var w2 = window.open();
+                                w2.document.write(htmlDeclaracao);
 
-                    window.close();
-                </script>
-            </head>
-            <body></body>
-            </html>
-            """.formatted(base64Etiqueta, base64Declaracao);
+                                window.close();
+                            </script>
+                        </head>
+                        <body></body>
+                        </html>
+                        """.formatted(base64Etiqueta, base64Declaracao);
 
                 return ResponseEntity.ok()
                         .contentType(MediaType.TEXT_HTML)

@@ -1,12 +1,12 @@
-package com.rastreio.geradoretiquetas.service;
+package com.rastreio.geradoretiquetas.pedido;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.rastreio.geradoretiquetas.client.LojaIntegradaClient;
-import com.rastreio.geradoretiquetas.dto.ClienteDTO;
-import com.rastreio.geradoretiquetas.dto.EnderecoDTO;
-import com.rastreio.geradoretiquetas.dto.ItemPedidoDTO;
-import com.rastreio.geradoretiquetas.dto.PedidoDTO;
+import com.rastreio.geradoretiquetas.integracao.lojaintegrada.LojaIntegradaClient;
+import com.rastreio.geradoretiquetas.cliente.dto.ClienteDTO;
+import com.rastreio.geradoretiquetas.cliente.dto.EnderecoDTO;
+import com.rastreio.geradoretiquetas.pedido.dto.ItemPedidoDTO;
+import com.rastreio.geradoretiquetas.pedido.dto.PedidoDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
