@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./Pedidos.css";
 
 export default function Pedidos() {
   const [pedidos, setPedidos] = useState([]);
@@ -26,33 +25,43 @@ export default function Pedidos() {
   };
 
   return (
-    <div className="pedidos-container"> 
-
-      <table className="pedidos-tabela">
+    <div className="flex justify-center py-10 px-5">
+      <table className="table-auto border-collapse w-full shadow-sm rounded-lg overflow-hidden">
         <thead>
-          <tr>
-            <th>Pedido</th>
-            <th>Cliente</th>
-            <th>Produto</th>
-            <th>Envio</th>
-            <th>Ações</th>
+          <tr className="bg-gray-200 text-gray-700 text-sm uppercase">
+            <th className="px-4 py-2 text-left">Pedido</th>
+            <th className="px-4 py-2 text-left">Cliente</th>
+            <th className="px-4 py-2 text-left">Produto</th>
+            <th className="px-4 py-2 text-left">Envio</th>
+            <th className="px-4 py-2 text-left">Ações</th>
           </tr>
         </thead>
         <tbody>
           {pedidos.map((pedido) => (
-            <tr key={pedido.numero}>
-              <td>#{pedido.numero}</td>
-              <td>{pedido.cliente?.nome}</td>
-              <td>{pedido.itens?.map((item) => item.nomeProduto).join(", ")}</td>
-              <td>{pedido.formaEnvio}</td>
-              <td className="acoes">
-                <button className="btn btn-etiqueta" onClick={() => abrirPdf(pedido.numero, "etiqueta")}>
+            <tr key={pedido.numero} className="border-b hover:bg-gray-50">
+              <td className="px-4 py-2 text-gray-600">#{pedido.numero}</td>
+              <td className="px-4 py-2 text-gray-600">{pedido.cliente?.nome}</td>
+              <td className="px-4 py-2 text-gray-600">
+                {pedido.itens?.map((item) => item.nomeProduto).join(", ")}
+              </td>
+              <td className="px-4 py-2 text-gray-600">{pedido.formaEnvio}</td>
+              <td className="px-4 py-2 flex gap-2">
+                <button
+                  className="px-3 py-1 rounded-full border border-gray-600 text-white text-sm hover:bg-gray-100"
+                  onClick={() => abrirPdf(pedido.numero, "etiqueta")}
+                >
                   Etiqueta
                 </button>
-                <button className="btn btn-declaracao" onClick={() => abrirPdf(pedido.numero, "declaracao")}>
+                <button
+                  className="px-3 py-1 rounded-full border border-gray-600 text-white text-sm hover:bg-gray-100"
+                  onClick={() => abrirPdf(pedido.numero, "declaracao")}
+                >
                   Declaração
                 </button>
-                <button className="btn btn-combo" onClick={() => abrirPdf(pedido.numero, "ambos")}>
+                <button
+                  className="px-3 py-1 rounded-full bg-yellow-400 text-white text-sm hover:bg-yellow-500"
+                  onClick={() => abrirPdf(pedido.numero, "ambos")}
+                >
                   Etiqueta + Declaração
                 </button>
               </td>
