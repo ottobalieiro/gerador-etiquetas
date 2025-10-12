@@ -39,17 +39,31 @@ Foi criada para reduzir drasticamente o tempo e o esforço na geração manual d
 
 ## Executar Localmente
 
+### Requisitos
+- Loja Integrada (paga).
+- Contrato com oo Correios.
+- Algumas chaves e informações (incorporar no ```application.properties```):
+```
+lojaintegrada.api.chave=CHAVE_LJ
+lojaintegrada.api.aplicacao=CHAVE_APLICACAO_LJ
+
+correios.api.codigo.acesso=CHAVE_UNICA_CWS
+correios.api.cartao=NUMERO_CARTAO_POSTAGEM
+meu.correios.username=CNPJ_USADO_NO_CONTRATO
+```
 ### Backend
 ```bash
-cd backend
+cd backend-gerador-etiquetas
 mvn spring-boot:run
 ```
 ### Frontend
 ```bash
-cd frontend
+cd frontend-gerador-etiquetas
 npm install
 npm run dev
 ```
+### Dica Rápida
+Use o script: ```start-projetos.bat``` na pasta principal
 
 ## Contato
 [![Email](https://img.shields.io/badge/Email-otto.bfa%40gmail.com-red?logo=gmail)](mailto:otto.bfa@gmail.com)
